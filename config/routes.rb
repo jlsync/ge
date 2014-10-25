@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   devise_for :businesses
 
-  get 'r/:business_id/:id' => 'referrers#show', as: :referrer, constraints: { id: /[^\/]+/ }
+  # d for dashboard
+  get 'd/:business_id/:id' => 'referrers#show', as: :referrer, constraints: { id: /[^\/]+/ }
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
