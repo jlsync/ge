@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+
   devise_for :businesses
+
+  get 'r/:business_id/:id' => 'referrers#show', as: :referrer, constraints: { id: /[^\/]+/ }
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
