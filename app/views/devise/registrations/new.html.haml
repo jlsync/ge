@@ -8,7 +8,7 @@
   %div
     = f.label :destination_url, "Your website:"
     %br/
-    = f.text_field :destination_url, autofocus: true 
+    = f.url_field :destination_url, placeholder: 'e.g. http://www.example.com'
   %div
     = f.label :email
     %br/
