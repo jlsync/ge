@@ -6,6 +6,12 @@
   for
   %em #{@business.name}
 
+.well
+  %h3 Your link to share is:
+  %h1
+    %a{href: redirect_url(@referrer)}= redirect_url(@referrer)
+  
+
 %table.table
   %thead
     %tr

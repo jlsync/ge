@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   # d for dashboard
   get 'd/:business_id/:id' => 'referrers#show', as: :referrer, constraints: { id: /[^\/]+/ }
 
+  # r for redirect/refer
+  get 'r/:id' => 'referrers#redirect', as: :redirect
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
