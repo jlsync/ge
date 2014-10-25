@@ -6,14 +6,14 @@
   .well
     %p
       %tt< 
-        #{root_url}r/#{current_business.id}/
+        #{root_url}d/#{current_business.id}/
         %strong> your_users@email_addresss.com
 
   %p
     for example, your own personal referral link is: 
   %p
     %em
-      #{root_url}r/#{current_business.id}/#{url_encode(current_business.email)}
+      #{root_url}d/#{current_business.id}/#{url_encode(current_business.email)}
 
 
   %hr
