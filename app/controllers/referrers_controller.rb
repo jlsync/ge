@@ -12,7 +12,7 @@ class ReferrersController < ApplicationController
       @referrer.increment!(:click_count)  # then increment as we haven't seen it before
       session[params[:id]] = 1  # and now set key so that we don't record duplicate clicks
     end
-    redirect_to ( @referrer.business.destination_url || 'http://www.google.com' )
+    redirect_to "#{@referrer.business.destination_url}?ge=#{params[:id]}" # include referrer id as 'ge' param for conversion tracking on business site.
   end
 
 end
