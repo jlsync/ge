@@ -6,6 +6,10 @@
     %br/
     = f.text_field :name, autofocus: true 
   %div
+    = f.label :destination_url, "Your website:"
+    %br/
+    = f.text_field :destination_url, autofocus: true 
+  %div
     = f.label :email
     %br/
     = f.email_field :email
