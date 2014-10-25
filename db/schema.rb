@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141025095643) do
+ActiveRecord::Schema.define(version: 20141025115515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,5 +41,16 @@ ActiveRecord::Schema.define(version: 20141025095643) do
 
   add_index "businesses", ["email"], name: "index_businesses_on_email", unique: true, using: :btree
   add_index "businesses", ["reset_password_token"], name: "index_businesses_on_reset_password_token", unique: true, using: :btree
+
+  create_table "referrers", force: true do |t|
+    t.integer  "business_id",                  null: false
+    t.string   "email",                        null: false
+    t.integer  "click_count",      default: 0
+    t.integer  "conversion_count", default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "referrers", ["business_id", "email"], name: "index_referrers_on_business_id_and_email", unique: true, using: :btree
 
 end
