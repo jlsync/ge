@@ -1,16 +1,31 @@
 
-%h1 Your Referral Dashboard
+%h1 Personal Referral Dashboard
 %h2
   Referals from
   %em #{@referrer.email}
   for
   %em #{@business.name}
 
+- my_url = redirect_url(@business, @referrer)
 .well
   %h3 Your link to share is:
   %h1
-    %a{href: redirect_url(@referrer)}= redirect_url(@referrer)
+    %a{href: my_url}= my_url
   
+%p 
+  %strong 
+    Share your 
+    %em #{@business.name} 
+    link with a friend by email:
+  %br 
+  %br 
+  - subject = "FYI: #{@business.name}"
+  - body = "Hi,\n\nI thought you might be interested in checking out this this thing: #{@business.name}.\n\n\nHere is my #{@business.name} link:\n\n#{my_url}\n\n\nthanks!"
+  Click to open email &rarr; 
+  %a.btn.btn-primary(target="_blank"){:href => "mailto:?subject=#{url_encode(subject)}&body=#{url_encode(body)}"} 
+    %i.glyphicon.glyphicon-send
+    &nbsp;
+    Share by Email
 
 %table.table
   %thead
@@ -27,5 +42,24 @@
 
 
 %h3 Reward Progress
-%p  Todo: x%/whatever to rewardX, 
- 
+
+%table.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th #
+      %th Reward
+      %th Progress
+  %tbody
+    - [1, 2, 3].each do |i|
+      - ri = @business.send("reward_#{i}".to_sym)
+      - ti = @business.send("threshold_#{i}".to_sym)
+      - if ri.present? and ti.present? and ti > 0
+        %tr
+          %th #{i}.
+          %td #{ri}
+          %td 
+            - if @referrer.conversion_count >= ti
+              100%
+            - else
+              #{(@referrer.conversion_count / ti).to_i}%
+  
