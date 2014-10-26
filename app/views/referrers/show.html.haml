@@ -1,16 +1,30 @@
 
-%h1 Your Referral Dashboard
+%h1 Personal Referral Dashboard
 %h2
   Referals from
   %em #{@referrer.email}
   for
   %em #{@business.name}
 
+- my_url = redirect_url(@business, @referrer)
 .well
   %h3 Your link to share is:
   %h1
-    %a{href: redirect_url(@business, @referrer)}= redirect_url(@business, @referrer)
+    %a{href: my_url}= my_url
   
+%p 
+  %strong 
+    Share your 
+    %em #{@business.name} 
+    link with a friend by email:
+  %br 
+  %br 
+  - subject = "FYI: #{@business.name}"
+  - body = "Hi,\n\nI thought you might be interested in checking out this this thing: #{@business.name}.\n\n\nHere is my #{@business.name} link:\n\n#{my_url}\n\n\nthanks!"
+  Click to open email &rarr; 
+  %a.btn.btn-primary(target="_blank"){:href => "mailto:?subject=#{url_encode(subject)}&body=#{url_encode(body)}"} 
+    /i.glyphicon.glyphicon-send
+    Share by Email
 
 %table.table
   %thead
