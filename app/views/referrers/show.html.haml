@@ -23,7 +23,8 @@
   - body = "Hi,\n\nI thought you might be interested in checking out this this thing: #{@business.name}.\n\n\nHere is my #{@business.name} link:\n\n#{my_url}\n\n\nthanks!"
   Click to open email &rarr; 
   %a.btn.btn-primary(target="_blank"){:href => "mailto:?subject=#{url_encode(subject)}&body=#{url_encode(body)}"} 
-    /i.glyphicon.glyphicon-send
+    %i.glyphicon.glyphicon-send
+    &nbsp;
     Share by Email
 
 %table.table
