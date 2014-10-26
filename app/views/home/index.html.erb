@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>GrowthEngine</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <style type="text/css">
+  <div class="home">{
+    background:url('img/bg-home.jpeg') center 100px no-repeat white;</div>
+  }
+  <div class="home"><div class="hero-unit">{
+    background: url('#') right bottom no-repeat;</div></div>
+  }
+  </style>
+</head>
+<body class="home">
+  <%= render "header" %>
+  <article class="container">
+    <header class="hero-unit">
+      <h1> <span style = "color: green;">Get</span> More Signups </h1>
+      <p class="intro">
+        We help you boost your user base. Literally!
+      </p>
+      <form id = "signup_form1">
+        <input type="text" name="mail" placeholder="Your Email" id="email_input"> <br>
+        <input type="submit" Value="Get Early Access" class="btn btn-green btn-large email_btn"> 
+        </form>  
+    </header>
+    <section class="row features">
+      <h2 style= "margin-bottom: 20px; font-size: 21px;"> At 
+        <span style = "color: green;">GrowthEngine</span> we use your customers' behaviour habits to get you more signups organically. </h2> 
+      <p class="intro firefox_leftalign_fix" style="font-size: 30px;"> Here's How</p>
+      <div class="span6">
+        <i class="search"></i>
+        <h3>Discover great incentives</h3>
+        <p style="text-align:justify;" class="ff_textalign_left"> 
+        There are specific things that get your customers excited and some that just don't work. We work with you to discover what gets your customer excited. </p>
+      </div>
+      <div class="span6">
+        <i class="bookmarking"></i>
+        <h3>GrowthEngine Integration</h3>
+        <p style="text-align:justify;" class="ff_textalign_left"> We provide you with easy-to-use HTML forms and other APIs with detailed documentation to help you easily integrate the GrowthEngine magic into your website. </p>
+      </div>
+      <div class="span6" >
+        <i class="collaborate"></i> 
+        <h3>Engage Customers </h3>
+        <p style="text-align:justify;" class="ff_textalign_left">
+          It's time to get new customers to love your product/service. We engage with new & existing customers to kickstart your organic viral growth automatically through our GrowthEgnine platform.
+        </p> 
+      </div>
+      <div class="span6">
+        <i class="read"></i>
+        <h3>Collaboration</h3>
+          <p style="text-align:justify;" class="ff_textalign_left">
+            Our platform is able to track and analyse user engagement so we know what is working and what isn't, to allow us to run a few tests to automatically optimise convertion rates.
+            </p>
+      </div>
+    </section>
+    <hr style = "margin-top: 0px; margin-bottom: 60px ">
+    <section class="row beawesome" style = "box-shadow: 0 0 5px #888; background-image:url('img/base-noise.jpeg'); margin-bottom: 50px;">
+      <p> Don't take our word for it, try GrowthEngine for your buiness now.</p>
+      <a href="#email_input" class="btn btn-green btn-large">Get Early Access</a>
+    </section>
+    <hr style = "margin-top: 10px; border-top: 4px solid #eeeeee;">
+      <%= render "footer" %>
+    </article>
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/prettify.js"></script>
+    <script src="js/javascript.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+  </body>
+</html>

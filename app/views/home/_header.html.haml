@@ -1,0 +1,25 @@
+%nav.navbar
+  <div class="navbar-inner" style="border-top: 2px solid;
+  border-image:url("img1/border.png")70 stretch ;
+  border-bottom:0;
+  border-left:0;
+  border-right:0;">
+  .container
+    %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    %a.brand{:href => "#"}
+      %h4
+        %span{:style => "color: green; font-size: 25px; line-height: 30px;"} Growth
+        %span{:style => "color:green; font-size: 25px; line-height: 30px;"} Engine
+    .nav-collapse
+      %ul.nav.actions
+        %li
+          %a{:href => "mailto:yaw.okyere@me.com?Subject=Hello", :target => "_top"} Contact Us
+          %li
+      %ul.nav
+        %li
+          %a{:href => "#"} Blog
+        %li
+          %button.btn.btn-green{:onclick => "window.location.href='#'"} LOGIN
