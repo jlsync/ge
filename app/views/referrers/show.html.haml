@@ -42,5 +42,24 @@
 
 
 %h3 Reward Progress
-%p  Todo: x%/whatever to rewardX, 
- 
+
+%table.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th #
+      %th Reward
+      %th Progress
+  %tbody
+    - [1, 2, 3].each do |i|
+      - ri = @business.send("reward_#{i}".to_sym)
+      - ti = @business.send("threshold_#{i}".to_sym)
+      - if ri.present? and ti.present? and ti > 0
+        %tr
+          %th #{i}.
+          %td #{ri}
+          %td 
+            - if @referrer.conversion_count >= ti
+              100%
+            - else
+              #{(@referrer.conversion_count / ti).to_i}%
+  
