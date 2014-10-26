@@ -9,7 +9,7 @@
 .well
   %h3 Your link to share is:
   %h1
-    %a{href: redirect_url(@referrer)}= redirect_url(@referrer)
+    %a{href: redirect_url(@business, @referrer)}= redirect_url(@business, @referrer)
   
 
 %table.table

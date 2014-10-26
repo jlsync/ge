@@ -9,10 +9,14 @@ Rails.application.routes.draw do
   devise_for :businesses
 
   # d for dashboard
-  get 'd/:business_id/:id' => 'referrers#show', as: :referrer, constraints: { id: /[^\/]+/ }
+  get 'd/:business_id/:email' => 'referrers#show', as: :referrer, constraints: { email: /[^\/]+/ }
+
+  # t for track (needs to above route below)
+  get ':business_id/t.gif' => 'referrers#track', as: :track, format: :gif
 
   # r for redirect/refer
-  get 'r/:id' => 'referrers#redirect', as: :redirect
+  get ':business_id/:id' => 'referrers#redirect', as: :redirect
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
