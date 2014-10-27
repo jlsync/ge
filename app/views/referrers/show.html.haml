@@ -40,7 +40,7 @@
   %thead
     %tr
       %th Category
-      %th Count
+      %th Your Count
   %tbody
     %tr
       %th Clicks
@@ -57,6 +57,7 @@
     %tr
       %th #
       %th Reward
+      %th Conversions Required
       %th Progress
   %tbody
     - [1, 2, 3].each do |i|
@@ -66,6 +67,7 @@
         %tr
           %th #{i}.
           %td #{ri}
+          %td #{ti}
           %td 
             - if @referrer.conversion_count >= ti
               100%
