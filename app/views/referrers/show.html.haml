@@ -57,6 +57,7 @@
     %tr
       %th #
       %th Reward
+      %th Conversions Target
       %th Conversions Required
       %th Progress
   %tbody
@@ -68,6 +69,13 @@
           %th #{i}.
           %td #{ri}
           %td #{ti}
+          %td 
+            - if @referrer.conversion_count >= ti
+              %i.glyphicon.glyphicon-ok
+              &nbsp; 
+              Awarded
+            - else
+              = ti - @referrer.conversion_count
           %td 
             - if @referrer.conversion_count >= ti
               100%
