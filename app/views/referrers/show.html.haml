@@ -59,7 +59,7 @@
       %th Reward
       %th Conversions Target
       %th Conversions Required
-      %th Progress
+      %th Conversions Progress
   %tbody
     - [1, 2, 3].each do |i|
       - ri = @business.send("reward_#{i}".to_sym)
@@ -78,7 +78,9 @@
               = ti - @referrer.conversion_count
           %td 
             - if @referrer.conversion_count >= ti
-              100%
+              - pc = 100
             - else
-              #{((@referrer.conversion_count * 100) / ti).to_i}%
+              - pc = ((@referrer.conversion_count * 100) / ti).to_i
+            .progress
+              .progress-bar.progress-bar-primary.progress-bar-striped(role="progressbar" aria-valuemin="0" aria-valuemax="100"){'aria-valuenow' => "#{pc}", style: "width: #{pc}%;" } #{pc}%
   
