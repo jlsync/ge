@@ -9,6 +9,7 @@
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     %div
       Currently waiting confirmation for: #{resource.unconfirmed_email}
+  = render 'common_form_parts', f: f
   %div
     = f.label :password
     %i (leave blank if you don't want to change it)

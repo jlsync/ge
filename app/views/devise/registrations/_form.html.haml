@@ -1,0 +1,70 @@
+= devise_error_messages!
+%div
+  = f.label :name
+  %br/
+  = f.text_field :name, autofocus: true 
+%div
+  = f.label :destination_url, "Your website:"
+  %br/
+  = f.url_field :destination_url, placeholder: 'e.g. http://www.example.com'
+%div
+  = f.label :email
+  %br/
+  = f.email_field :email
+#accordion.panel-group
+.panel.panel-default
+  .panel-heading
+    %h4.panel-title
+      %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseOne"}
+        Reward
+  #collapseOne.panel-collapse.collapse.in
+    .panel-body
+      %div
+        = f.label :reward_1, "Choose your reward:"
+        %br/
+        = f.text_field :reward_1
+      %div
+        = f.label :threshold_1, "How many sign ups should earn this reward?"
+        %br/
+        = f.text_field :threshold_1
+.panel.panel-default
+  .panel-heading
+    %h4.panel-title
+      %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseTwo"}
+        Bonus Reward (optional)
+  #collapseTwo.panel-collapse.collapse
+    .panel-body
+      %div
+        = f.label :reward_2, "Bonus reward:"
+        %br/
+        = f.text_field :reward_2
+      %div
+        = f.label :threshold_2, "How many sign ups should earn this reward?"
+        %br/
+        = f.text_field :threshold_2
+.panel.panel-default
+  .panel-heading
+    %h4.panel-title
+      %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseThree"}
+        Superstar reward (optional)
+  #collapseThree.panel-collapse.collapse
+    .panel-body
+      %div
+        = f.label :reward_3, "Rockstar Reward:"
+        %br/
+        = f.text_field :reward_3
+      %div
+        = f.label :threshold_3, "How many sign ups should earn this reward?"
+        %br/
+        = f.text_field :threshold_3
+%div
+  = f.label :password
+  - if @validatable
+    %i
+      (#{@minimum_password_length} characters minimum)
+  %br/
+  = f.password_field :password, autocomplete: "off"
+%div
+  = f.label :password_confirmation
+  %br/
+  = f.password_field :password_confirmation, autocomplete: "off"
