@@ -72,5 +72,5 @@
             - if @referrer.conversion_count >= ti
               100%
             - else
-              #{(@referrer.conversion_count / ti).to_i}%
+              #{((@referrer.conversion_count * 100) / ti).to_i}%
   
