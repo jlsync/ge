@@ -1,0 +1,78 @@
+%header
+  .color_bar
+    .color_yellow
+    .color_amber
+    .color_orange
+    .color_sunset
+    .color_red
+    .color_fuchsia
+    .color_purple
+    .color_indigo
+    .color_blue
+    .color_aqua
+    .color_green
+    .color_lime
+  %nav
+    .grid-container
+      .grid-2.logo
+        %h1 GrowthApp
+      .grid-8.nav_items
+        %ul
+          %li.btn.btn_green.signup_btn
+            %a{:href => "http://growthapp.tumblr.com"} Blog
+          %li.btn.btn_blue.signup_btn
+            %a{:href => new_business_registration_path } Sign Up
+          %li
+            %a.btn.btn-primary{:href => new_business_session_path} Log In
+
+.hero_img_div
+  = image_tag "plant.png", class: "music-img"
+#hero.hero
+  %span
+    %h1 More users through word of mouth
+    %form#signup_form1
+      %input#email_input{:name => "mail", :placeholder => "Your Email", :type => "email", disabled: true}/
+      %input.btn.btn_blue.signup_btn.email_btn.disabled{:type => "submit", :value => "Join the beta"}/
+
+.grid-container.examples.color_lightblue.white_text
+  .grid-6.example_right
+    %h1 Drive engagement
+    %h2 We use behavioural economics and the ways customers react to boost user engagament
+    %ul
+      %li.white_text Combined behavioural economics
+      %li.white_text With inpulse buying analysis
+  .grid-6.img_left
+    = image_tag( "pic8.png", { class: "img_right" } )
+.grid-container.examples
+  .grid-6.example_left
+    %h1 Word of mouth marketing
+    %h2 Using customer behaviour data, we use growth hacks to get your customers to talk about you
+    %ul
+      %li
+        Excited customers share more
+      %li This generates organic growth
+  .grid-6.img_right
+    = image_tag "pic6.png"
+.grid-container.examples.color_green.white_text
+  .grid-6.example_right
+    %h1 Viral Growth
+    %h2 After all, potential customers prefer recommendation to ads. This means more conversion rates.
+    %ul
+      %li
+        %a.white_text{:href => ""} Our growth engine automates this for you
+      %li
+        %a.white_text{:href => ""}>
+        Try our engine to see  results
+  .grid-6.img_left
+    = image_tag "pic7.png"
+.call_action
+  %br/
+  %h1 Get an insame amount of traffic to your site. Seriously try it.
+  %a.btn.btn_blue.white_text{:href => "#hero"} Get Early Access
+%footer
+  %ul
+    %li &copy; GrowthApp
+    %li
+      %a{:href => "https://www.facebook.com/GrowthAppp"} Facebook
+    %li
+      %a{:href => "https://twitter.com/Growth_App"} Twitter

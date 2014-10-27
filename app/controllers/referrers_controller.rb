@@ -33,8 +33,8 @@ class ReferrersController < ApplicationController
       # browsers that don't allow 3rd parties to set cookies.
       cookies.signed[params[:id]] = { value: 'c' , path: "/#{@business.id}/" } 
     end
-    #render # track.gif TODO
-    redirect_to '/track.gif'
+    expires_now
+    send_file Rails.root.join("public", "track.gif"), type: "image/gif", disposition: "inline"
   end
 
 end
