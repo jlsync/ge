@@ -14,8 +14,8 @@ class ReferrersController < ApplicationController
       # and now set cookie so that we don't record duplicate clicks
       cookies[params[:id]] = { value: 'r' , path: "/#{@business.id}/" } 
       # and record the last referrer to credit an conversion to....
-      cookies[:last] = { value: params[:id], path: "/#{@business.id}/" } 
     end
+    cookies[:last] = { value: params[:id], path: "/#{@business.id}/" } 
     if @referrer.business.destination_url =~ /\Ahttp/
       url = @referrer.business.destination_url
     else
@@ -31,7 +31,7 @@ class ReferrersController < ApplicationController
       # now record the conversion in the cookie so we dont later double count 
       # (double counting will probably still occur in safari and other 
       # browsers that don't allow 3rd parties to set cookies.
-      cookies[params[:id]] = { value: 'c' , path: "/#{@business.id}/" } 
+      cookies[rid] = { value: 'c' , path: "/#{@business.id}/" } 
     end
     expires_now
     send_file Rails.root.join("public", "track.gif"), type: "image/gif", disposition: "inline", filename: 't.gif'
