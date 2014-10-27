@@ -29,15 +29,6 @@
   %strong 
     Share your 
     %em #{@business.name} 
-    link with your friends by facebook &rarr;
-    %a.btn.btn-primary(target="_facebook"){:href => "https://www.facebook.com/sharer.php?u=#{url_encode(my_url)}&t=#{url_encode("A new thing: #{@business.name}")}" }
-      %i.glyphicon.glyphicon-share
-      &nbsp;
-      Share by Facebook
-%p 
-  %strong 
-    Share your 
-    %em #{@business.name} 
     link with your followers on twitter &rarr;
     %a.btn.btn-primary(target="_twitter"){:href => "https://twitter.com/home?status=#{url_encode("A new thing: #{@business.name} #{my_url}")}" }
       %i.glyphicon.glyphicon-share
