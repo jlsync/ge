@@ -455,10 +455,6 @@ footer a{
 		min-height: 450px;
 	}
 
-	.call_action a {
-		line-height: 100px;
-		font-size: 1.1em;
-	}
 
 	.call_action .btn {
 		padding: 20px;
@@ -537,11 +533,6 @@ footer a{
 		height: 300px;
 	}
 
-	.call_action a {
-		line-height: 200px;
-		font-size: 1.2em;
-	}
-
 	.call_action .btn {
 		padding: 25px;
 	}
@@ -553,7 +544,6 @@ footer a{
 	footer {
 		font-size: 0.9em;
 	}
-
 
 }
 
