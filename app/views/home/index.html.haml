@@ -30,9 +30,10 @@
 #hero.hero
   %span
     %h1 More users through word of mouth
-    %form#signup_form1
-      %input#email_input{:name => "mail", :placeholder => "Your Email", :type => "email", disabled: true}/
-      %input.btn.btn_blue.signup_btn.email_btn.disabled{:type => "submit", :value => "Join the beta"}/
+    %a.btn.btn-success.btn-lg{:href => new_business_registration_path } 
+      %i.glyphicon.glyphicon-ok
+      &nbsp;
+      Sign Up Now!
 
 .grid-container.examples.color_lightblue.white_text
   .grid-6.example_right
