@@ -13,19 +13,37 @@
     %a{href: my_url}= my_url
   
 %p 
+  - subject = "FYI: #{@business.name}"
+  - body = "Hi,\n\nI thought you might be interested in checking out this this thing: #{@business.name}.\n\n\nHere is my #{@business.name} link:\n\n#{my_url}\n\n\nthanks!"
   %strong 
     Share your 
     %em #{@business.name} 
     link with a friend by email:
-  %br 
-  %br 
-  - subject = "FYI: #{@business.name}"
-  - body = "Hi,\n\nI thought you might be interested in checking out this this thing: #{@business.name}.\n\n\nHere is my #{@business.name} link:\n\n#{my_url}\n\n\nthanks!"
   Click to open email &rarr; 
   %a.btn.btn-primary(target="_blank"){:href => "mailto:?subject=#{url_encode(subject)}&body=#{url_encode(body)}"} 
     %i.glyphicon.glyphicon-send
     &nbsp;
     Share by Email
+
+%p 
+  %strong 
+    Share your 
+    %em #{@business.name} 
+    link with your friends by facebook &rarr;
+    %a.btn.btn-primary(target="_facebook"){:href => "https://www.facebook.com/sharer.php?u=#{url_encode(my_url)}&t=#{url_encode("A new thing: #{@business.name}")}" }
+      %i.glyphicon.glyphicon-share
+      &nbsp;
+      Share by Facebook
+%p 
+  %strong 
+    Share your 
+    %em #{@business.name} 
+    link with your followers on twitter &rarr;
+    %a.btn.btn-primary(target="_twitter"){:href => "https://twitter.com/home?status=#{url_encode("A new thing: #{@business.name} #{my_url}")}" }
+      %i.glyphicon.glyphicon-share
+      &nbsp;
+      Share by Twitter
+
 
 %table.table
   %thead
