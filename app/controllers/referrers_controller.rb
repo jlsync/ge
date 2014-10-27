@@ -34,7 +34,7 @@ class ReferrersController < ApplicationController
       cookies.signed[params[:id]] = { value: 'c' , path: "/#{@business.id}/" } 
     end
     expires_now
-    send_file Rails.root.join("public", "track.gif"), type: "image/gif", disposition: "inline"
+    send_file Rails.root.join("public", "track.gif"), type: "image/gif", disposition: "inline", filename: 't.gif'
   end
 
 end

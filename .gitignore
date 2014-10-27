@@ -16,5 +16,5 @@
 /tmp
 
 .DS_Store
-.swp
+*.swp
 
