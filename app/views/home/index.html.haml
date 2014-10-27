@@ -18,12 +18,10 @@
         %h1 GrowthApp
       .grid-8.nav_items
         %ul
-          %li.btn.btn_green.signup_btn
-            %a{:href => "http://growthapp.tumblr.com"} Blog
-          %li.btn.btn_blue.signup_btn
-            %a{:href => new_business_registration_path } Sign Up
           %li
-            %a.btn.btn-primary{:href => new_business_session_path} Log In
+            %a.btn.btn-primary{:href => "http://growthapp.tumblr.com"} Blog
+          %li
+            %a.btn.btn-success{:href => new_business_session_path} Log In
 
 .hero_img_div
   = image_tag "plant.png", class: "music-img"
