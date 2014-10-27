@@ -345,7 +345,6 @@ footer a{
 		position: relative;
 		padding: 0 20px;
 		text-align: left;
-
 	}
 
 	.examples li {
@@ -355,6 +354,7 @@ footer a{
 	.example_left {
 		color: gray;
 	}
+
 	.examples .example_left,
 	.examples .example_right {
 		margin: 0;
@@ -364,7 +364,8 @@ footer a{
 
 	.examples .img_left{
 		float: left !important;
-		text-align: ; }
+		text-align: ; 
+  }
 
 	.examples .img_left img {
 		position: absolute;
@@ -395,10 +396,8 @@ footer a{
 	}
 
 	.call_action h1 {
-	font-size: 1.8em; 
+	  font-size: 1.8em; 
 	}
-
-
 
 	footer li {
 		display: inline-block;
@@ -440,7 +439,6 @@ footer a{
 	.examples li {
 		line-height: 1.2em;
 		list-style: none;
-
 	}
 
 	.examples ul {
@@ -559,35 +557,4 @@ footer a{
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
